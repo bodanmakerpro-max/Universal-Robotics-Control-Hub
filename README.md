@@ -65,10 +65,11 @@ flowchart TD
 | [`docs/`](docs/) | Goals, specifications, pin map, architecture, BOM, research method, test plan, safety, roadmap and history |
 | [`hardware/rev4/`](hardware/rev4/) | R4 schematic PDF, illustrated technical guide and notes on missing editable files |
 | [`hardware/relay-revA/`](hardware/relay-revA/) | Earlier relay prototype document, a **different** design from R4 |
-| [`hardware/legacy-kicad/`](hardware/legacy-kicad/) | Link to original KiCad files in the existing Petnica GitHub repository |
+| [`hardware/legacy-kicad/`](hardware/legacy-kicad/) | **Editable legacy KiCad PCB, schematic and project**, copied from the earlier Petnica repository |
+| [`hardware/routing-history/`](hardware/routing-history/) | First routing work versus the improved R4 layout, with clear version notes |
 | [`firmware/`](firmware/) | Starting point for an STM32 relay-control example (not a finished firmware project) |
 | [`presentations/`](presentations/) | Earlier project + PLECS presentation, includes related DC-load material |
-| [`assets/`](assets/) | R4 document preview and earlier illustrative PCB routing image |
+| [`assets/`](assets/) | R4 board render, R4 signal routing diagram and earlier PCB layout illustration |
 | [`PUBLISH_TO_GITHUB.ps1`](PUBLISH_TO_GITHUB.ps1) | Windows script for uploading this folder to a new blank GitHub repo |
 
 ## Project applications
@@ -85,7 +86,7 @@ See [Project status](docs/PROJECT_STATUS.md) and [testing plan](docs/TEST_PLAN.m
 
 1. Read [the latest R4 hardware guide](hardware/rev4/Elektronche_Carrier_Guide.pdf) and [pin map](docs/PIN_MAP.md).
 2. Do not connect motors or apply high current until the physical power stage is assembled, checked and tested using a current-limited supply.
-3. For editable older KiCad work, follow [existing source links](hardware/legacy-kicad/README.md).
+3. For editable older KiCad work, open the [archived legacy KiCad files](hardware/legacy-kicad/README.md) and see [routing history](hardware/routing-history/README.md).
 4. If publishing a **new GitHub repository**, create an empty repo named `Universal-Robotics-Control-Hub` under `bodanmakerpro-max`, then use `PUBLISH_TO_GITHUB.ps1` or the Git commands in [PUBLISHING.md](PUBLISHING.md).
 
 ## Note about licensing

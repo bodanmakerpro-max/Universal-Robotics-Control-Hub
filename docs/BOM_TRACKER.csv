@@ -1,0 +1,14 @@
+Assembly,Item,Qty,Unit price,Subtotal,Notes
+R4,NUCLEO-F401RE,1,,,Confirm exact controller revision
+R4,LM2596T-5.0/NOPB,1,,,Verify supplier
+R4,LM2596T-3.3/NOPB,1,,,Verify supplier
+R4,SRD-12VDC-SL-C relay,2,,,Verify coil/contact rating for DC load
+R4,PN2222ABU,2,,,Review schematic and footprints
+R4,SRR1260-101M inductor,TBD,,,Verify count and characteristics
+R4,1N5822 diode,TBD,,,Verify count
+R4,2x7 2.54mm header,2,,,Verify mating orientation
+R4,XT60-style power connectors,3,,,Verify mating orientation and amperage
+R4,PCB fabrication,1,,,180x145mm four layers 2oz outer 1oz inner
+R4,Fuses and holders,TBD,,,According to scheme and environment
+R4,Resistors capacitors LEDs,TBD,,,Finalize from KiCad BOM
+R4,Shipping and taxes,1,,,Fill at checkout

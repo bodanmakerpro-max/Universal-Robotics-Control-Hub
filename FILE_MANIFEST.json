@@ -1,0 +1,131 @@
+{
+  "project": "Universal Robotics Control Hub",
+  "package_date": "2026-11-20",
+  "file_count": 31,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 91
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 194
+    },
+    {
+      "path": "PUBLISHING.md",
+      "bytes": 1507
+    },
+    {
+      "path": "PUBLISH_TO_GITHUB.ps1",
+      "bytes": 1298
+    },
+    {
+      "path": "README.md",
+      "bytes": 5724
+    },
+    {
+      "path": "assets/README.md",
+      "bytes": 302
+    },
+    {
+      "path": "assets/carrier_r4_preview.png",
+      "bytes": 273109
+    },
+    {
+      "path": "assets/early_pcb_routing_reference.png",
+      "bytes": 2033827
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 2413
+    },
+    {
+      "path": "docs/BOM.md",
+      "bytes": 2419
+    },
+    {
+      "path": "docs/BOM_TRACKER.csv",
+      "bytes": 749
+    },
+    {
+      "path": "docs/DESIGN_HISTORY.md",
+      "bytes": 2556
+    },
+    {
+      "path": "docs/HARDWARE_SPECS.md",
+      "bytes": 1442
+    },
+    {
+      "path": "docs/MOTIVATION_AND_GOALS.md",
+      "bytes": 1404
+    },
+    {
+      "path": "docs/PIN_MAP.md",
+      "bytes": 2078
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "bytes": 1858
+    },
+    {
+      "path": "docs/RESEARCH_AND_EVALUATION.md",
+      "bytes": 2181
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "bytes": 1027
+    },
+    {
+      "path": "docs/SAFETY_AND_BUILD.md",
+      "bytes": 1587
+    },
+    {
+      "path": "docs/TEST_PLAN.md",
+      "bytes": 2289
+    },
+    {
+      "path": "firmware/README.md",
+      "bytes": 572
+    },
+    {
+      "path": "firmware/stm32_hal_relay_example.c",
+      "bytes": 806
+    },
+    {
+      "path": "hardware/legacy-kicad/README.md",
+      "bytes": 1367
+    },
+    {
+      "path": "hardware/relay-revA/README.md",
+      "bytes": 452
+    },
+    {
+      "path": "hardware/relay-revA/STM32_Dual_Relay_Design.pdf",
+      "bytes": 254696
+    },
+    {
+      "path": "hardware/rev4/Elektronche_Carrier_Guide.pdf",
+      "bytes": 1884532
+    },
+    {
+      "path": "hardware/rev4/Elektronche_Carrier_Schematic.pdf",
+      "bytes": 310733
+    },
+    {
+      "path": "hardware/rev4/README.md",
+      "bytes": 896
+    },
+    {
+      "path": "presentations/DC_Load_Universal_Robotics_Driver_PLECS.pptx",
+      "bytes": 147527
+    },
+    {
+      "path": "presentations/README.md",
+      "bytes": 394
+    },
+    {
+      "path": "tests/test_log_template.csv",
+      "bytes": 132
+    }
+  ]
+}
