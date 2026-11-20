@@ -1,31 +1,36 @@
 {
   "project": "Universal Robotics Control Hub",
-  "package_date": "2026-11-20",
-  "file_count": 31,
+  "generated_date": "2026-11-20",
+  "file_count_including_manifest": 37,
+  "note": "The manifest itself is omitted from the files array to avoid a self-referential size.",
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 91
+      "bytes": 90
     },
     {
       "path": ".gitignore",
-      "bytes": 194
+      "bytes": 193
     },
     {
       "path": "PUBLISHING.md",
-      "bytes": 1507
+      "bytes": 1506
     },
     {
       "path": "PUBLISH_TO_GITHUB.ps1",
-      "bytes": 1298
+      "bytes": 1297
     },
     {
       "path": "README.md",
-      "bytes": 5724
+      "bytes": 5973
+    },
+    {
+      "path": "assets/Elektronche_Carrier_R4_Routing.png",
+      "bytes": 169755
     },
     {
       "path": "assets/README.md",
-      "bytes": 302
+      "bytes": 692
     },
     {
       "path": "assets/carrier_r4_preview.png",
@@ -37,67 +42,79 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 2413
+      "bytes": 2412
     },
     {
       "path": "docs/BOM.md",
-      "bytes": 2419
+      "bytes": 2418
     },
     {
       "path": "docs/BOM_TRACKER.csv",
-      "bytes": 749
+      "bytes": 748
     },
     {
       "path": "docs/DESIGN_HISTORY.md",
-      "bytes": 2556
+      "bytes": 2555
     },
     {
       "path": "docs/HARDWARE_SPECS.md",
-      "bytes": 1442
+      "bytes": 1441
     },
     {
       "path": "docs/MOTIVATION_AND_GOALS.md",
-      "bytes": 1404
+      "bytes": 1403
     },
     {
       "path": "docs/PIN_MAP.md",
-      "bytes": 2078
+      "bytes": 2077
     },
     {
       "path": "docs/PROJECT_STATUS.md",
-      "bytes": 1858
+      "bytes": 1857
     },
     {
       "path": "docs/RESEARCH_AND_EVALUATION.md",
-      "bytes": 2181
+      "bytes": 2180
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 1027
+      "bytes": 1026
     },
     {
       "path": "docs/SAFETY_AND_BUILD.md",
-      "bytes": 1587
+      "bytes": 1586
     },
     {
       "path": "docs/TEST_PLAN.md",
-      "bytes": 2289
+      "bytes": 2288
     },
     {
       "path": "firmware/README.md",
-      "bytes": 572
+      "bytes": 571
     },
     {
       "path": "firmware/stm32_hal_relay_example.c",
-      "bytes": 806
+      "bytes": 805
     },
     {
       "path": "hardware/legacy-kicad/README.md",
-      "bytes": 1367
+      "bytes": 948
+    },
+    {
+      "path": "hardware/legacy-kicad/petnica_proekt_urd/petnica proekt urd.kicad_pcb",
+      "bytes": 93881
+    },
+    {
+      "path": "hardware/legacy-kicad/petnica_proekt_urd/petnica proekt urd.kicad_pro",
+      "bytes": 16594
+    },
+    {
+      "path": "hardware/legacy-kicad/petnica_proekt_urd/petnica proekt urd.kicad_sch",
+      "bytes": 77690
     },
     {
       "path": "hardware/relay-revA/README.md",
-      "bytes": 452
+      "bytes": 451
     },
     {
       "path": "hardware/relay-revA/STM32_Dual_Relay_Design.pdf",
@@ -113,7 +130,11 @@
     },
     {
       "path": "hardware/rev4/README.md",
-      "bytes": 896
+      "bytes": 895
+    },
+    {
+      "path": "hardware/routing-history/README.md",
+      "bytes": 1937
     },
     {
       "path": "presentations/DC_Load_Universal_Robotics_Driver_PLECS.pptx",
@@ -121,11 +142,11 @@
     },
     {
       "path": "presentations/README.md",
-      "bytes": 394
+      "bytes": 393
     },
     {
       "path": "tests/test_log_template.csv",
-      "bytes": 132
+      "bytes": 131
     }
   ]
 }
