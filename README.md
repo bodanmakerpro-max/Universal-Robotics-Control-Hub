@@ -79,3 +79,7 @@ The PDF guides, early design files, images and presentations are historical reso
 ## License
 
 No open-source license has been selected. Do not assume unrestricted reuse rights.
+
+### One specific issue to fix before fabrication
+
+A source-geometry check also found **one 0.2 mm F.Cu segment outside the board outline**, at negative board coordinates, with no assigned net. It was left unchanged in the uploaded source to preserve your design. Remove or correct it in KiCad and run DRC before ordering boards. See [validation status](docs/VALIDATION_STATUS.md).
