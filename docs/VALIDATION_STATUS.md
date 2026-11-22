@@ -45,3 +45,7 @@ The R4 PDF guide from 19 November 2026 states earlier ERC/DRC results; those res
 6. Supply missing models or switch the footprints to installed KiCad model paths.
 7. Export Gerber/drill only after DRC and supply a tested BOM.
 8. Build a low-current prototype with a protected bench power supply; log measured currents and temperatures.
+
+## Additional geometry issue found in static review
+
+The saved PCB has **one unassigned F.Cu track segment outside the board outline**, from approximately **(-37.8, -51.4) mm to (-40.6, -51.4) mm**, 0.2 mm wide, with an empty net name. It is not visible in the cropped board preview. Inspect and remove this stray segment in KiCad before using the board for fabrication; then re-run DRC. This observation comes from the saved source geometry, not a KiCad DRC report.
