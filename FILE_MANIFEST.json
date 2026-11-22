@@ -1,152 +1,32 @@
 {
   "project": "Universal Robotics Control Hub",
-  "generated_date": "2026-11-20",
-  "file_count_including_manifest": 37,
-  "note": "The manifest itself is omitted from the files array to avoid a self-referential size.",
-  "files": [
-    {
-      "path": ".gitattributes",
-      "bytes": 90
-    },
-    {
-      "path": ".gitignore",
-      "bytes": 193
-    },
-    {
-      "path": "PUBLISHING.md",
-      "bytes": 1506
-    },
-    {
-      "path": "PUBLISH_TO_GITHUB.ps1",
-      "bytes": 1297
-    },
-    {
-      "path": "README.md",
-      "bytes": 5973
-    },
-    {
-      "path": "assets/Elektronche_Carrier_R4_Routing.png",
-      "bytes": 169755
-    },
-    {
-      "path": "assets/README.md",
-      "bytes": 692
-    },
-    {
-      "path": "assets/carrier_r4_preview.png",
-      "bytes": 273109
-    },
-    {
-      "path": "assets/early_pcb_routing_reference.png",
-      "bytes": 2033827
-    },
-    {
-      "path": "docs/ARCHITECTURE.md",
-      "bytes": 2412
-    },
-    {
-      "path": "docs/BOM.md",
-      "bytes": 2418
-    },
-    {
-      "path": "docs/BOM_TRACKER.csv",
-      "bytes": 748
-    },
-    {
-      "path": "docs/DESIGN_HISTORY.md",
-      "bytes": 2555
-    },
-    {
-      "path": "docs/HARDWARE_SPECS.md",
-      "bytes": 1441
-    },
-    {
-      "path": "docs/MOTIVATION_AND_GOALS.md",
-      "bytes": 1403
-    },
-    {
-      "path": "docs/PIN_MAP.md",
-      "bytes": 2077
-    },
-    {
-      "path": "docs/PROJECT_STATUS.md",
-      "bytes": 1857
-    },
-    {
-      "path": "docs/RESEARCH_AND_EVALUATION.md",
-      "bytes": 2180
-    },
-    {
-      "path": "docs/ROADMAP.md",
-      "bytes": 1026
-    },
-    {
-      "path": "docs/SAFETY_AND_BUILD.md",
-      "bytes": 1586
-    },
-    {
-      "path": "docs/TEST_PLAN.md",
-      "bytes": 2288
-    },
-    {
-      "path": "firmware/README.md",
-      "bytes": 571
-    },
-    {
-      "path": "firmware/stm32_hal_relay_example.c",
-      "bytes": 805
-    },
-    {
-      "path": "hardware/legacy-kicad/README.md",
-      "bytes": 948
-    },
-    {
-      "path": "hardware/legacy-kicad/petnica_proekt_urd/petnica proekt urd.kicad_pcb",
-      "bytes": 93881
-    },
-    {
-      "path": "hardware/legacy-kicad/petnica_proekt_urd/petnica proekt urd.kicad_pro",
-      "bytes": 16594
-    },
-    {
-      "path": "hardware/legacy-kicad/petnica_proekt_urd/petnica proekt urd.kicad_sch",
-      "bytes": 77690
-    },
-    {
-      "path": "hardware/relay-revA/README.md",
-      "bytes": 451
-    },
-    {
-      "path": "hardware/relay-revA/STM32_Dual_Relay_Design.pdf",
-      "bytes": 254696
-    },
-    {
-      "path": "hardware/rev4/Elektronche_Carrier_Guide.pdf",
-      "bytes": 1884532
-    },
-    {
-      "path": "hardware/rev4/Elektronche_Carrier_Schematic.pdf",
-      "bytes": 310733
-    },
-    {
-      "path": "hardware/rev4/README.md",
-      "bytes": 895
-    },
-    {
-      "path": "hardware/routing-history/README.md",
-      "bytes": 1937
-    },
-    {
-      "path": "presentations/DC_Load_Universal_Robotics_Driver_PLECS.pptx",
-      "bytes": 147527
-    },
-    {
-      "path": "presentations/README.md",
-      "bytes": 393
-    },
-    {
-      "path": "tests/test_log_template.csv",
-      "bytes": 131
-    }
-  ]
+  "updated": "2026-11-22",
+  "latest_editable_kicad": {
+    "root": ".",
+    "basename": "Unuversal robotic driver final versio",
+    "project": "Unuversal robotic driver final versio.kicad_pro",
+    "schematic": "Unuversal robotic driver final versio.kicad_sch",
+    "board": "Unuversal robotic driver final versio.kicad_pcb",
+    "present": true,
+    "notes": "Files share internal KiCad project name. KiCad 10 format on PCB; open/ERC/DRC not independently run."
+  },
+  "latest_visual": "assets/latest_PCB_routing_preview.png",
+  "source_readmes": [
+    "README.md",
+    "docs/KICAD_EDITABLE_PROJECT.md",
+    "docs/PROJECT_STATUS.md",
+    "docs/VALIDATION_STATUS.md"
+  ],
+  "missing_assets": [
+    "models/*.step and models/*.wrl files referred to by board",
+    "standalone Carrier_Custom footprint library",
+    "latest Gerbers/drills",
+    "verified fabrication BOM"
+  ],
+  "prior_designs": [
+    "hardware/rev4/",
+    "hardware/relay-revA/",
+    "hardware/legacy-kicad/"
+  ],
+  "note": "This is a project source index, not a fixed file count. Legacy designs remain separate from the current native KiCad project."
 }

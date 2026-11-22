@@ -1,21 +1,21 @@
-# Routing versions and improvements
+# PCB routing history
 
-This folder keeps the board-routing history separate from the latest released design references. The aim is to show how the wiring and signal routing improved, without mixing different board revisions.
+This directory records the development of the signal and power routing.
 
-## First / earlier stage
+## Earlier routing
 
-- An older hand-routed KiCad version was discussed as `Elektronche_Carrier_R3 bodan routing.kicad_pcb` (along with its project file). **The original two editable files were not available to the repository importer** at the time of upload. Do not treat the unrelated older reference image as that R3 PCB.
-- An earlier Petnica Universal Robotics Driver KiCad project is preserved in [`../legacy-kicad/petnica_proekt_urd/`](../legacy-kicad/petnica_proekt_urd/). This is another older design, **not** the missing user-edited R3 PCB.
-- The historical illustration [`../../assets/early_pcb_routing_reference.png`](../../assets/early_pcb_routing_reference.png) is only an early PCB layout reference, not a routing comparison of the R3 and R4 boards.
+The archived Petnica project is an earlier independent KiCad version, preserved in [legacy-kicad](../legacy-kicad/README.md). A previously discussed hand-rerouted R3 board was not part of the source archived here. The [early reference image](../../assets/early_pcb_routing_reference.png) is a historical illustration and must not be confused with the exact R3 project.
 
-## Improved/current stage: R4, 19 November 2026
+## R4 documentation, 19 November 2026
 
-![R4 signal routing diagram](../../assets/Elektronche_Carrier_R4_Routing.png)
+![Earlier R4 routing illustration](../../assets/Elektronche_Carrier_R4_Routing.png)
 
-- **20 expansion-header signals routed on one signal layer without signal vias**, according to the R4 design report.
-- Top connector pins routed around the top of the board to the left STM32 header; bottom connector pins routed to the right STM32 header.
-- R4 uses four copper layers overall. *One-layer signal routing* does not imply a single-layer PCB.
-- Two switched 12 V relay outputs and separate 5 V/3.3 V regulated rails.
-- See the [R4 guide](../rev4/Elektronche_Carrier_Guide.pdf) and [exported schematic](../rev4/Elektronche_Carrier_Schematic.pdf).
+The original R4 design report described 20 header signals routed on a single signal layer without signal vias. That statement refers to **that R4 diagram and report**, not to independent tests of later uploaded source files.
 
-**Status:** The R4 routing drawing is a published design illustration, not proof of production success. The editable R4 KiCad source and the user's exact R3/R4 pair still need to be added to make an editable file-by-file routing comparison.
+## Current uploaded KiCad PCB, 22 November 2026
+
+![Latest routing preview](../../assets/latest_PCB_routing_preview.png)
+
+This image was generated directly from the uploaded native PCB's copper segments, pad positions, vias and outline. It is a 2D preview, not a photograph and not a KiCad design-rule report. The current saved PCB has four defined copper layers and contains routed segments on F.Cu, In2.Cu and B.Cu.
+
+The [current editable project](../../README.md#download-and-open-the-editable-project) is at the repository root. For exact board counts and validation limits see [VALIDATION_STATUS](../../docs/VALIDATION_STATUS.md). Do not assume the historical R4 single-layer signal-routing statement applies to this newest uploaded file.

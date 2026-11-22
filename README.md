@@ -1,94 +1,81 @@
 # Universal Robotics Control Hub
 
-**Reusable STM32-based controller for robots, motors, sensors and custom modules.**
+**Editable STM32 robotics carrier with two expansion headers, power conversion and two switched 12 V outputs.**
 
-Designed by **Bodan Nikolov**, with project development and seminar work also carried out with **Dusan**. The aim is simple: spend less time fixing wires and rebuilding electronics, and more time building and programming the actual robot.
+Latest uploaded KiCad project: **22 November 2026**. Designed by Bodan Nikolov. Historical design and seminar work also involved Dusan.
 
-![STM32 dual-module carrier, revision R4](assets/carrier_r4_preview.png)
+![Routing preview drawn from the uploaded KiCad PCB](assets/latest_PCB_routing_preview.png)
 
-> **Status, 20 November 2026:** The latest documented carrier is **R4**, dated 19 November 2026. Its schematic and PCB passed the reported KiCad checks. **No fabricated or load-tested R4 board has been verified.** The documents are a design reference, not proof of safety or final motor-current ratings.
+> **Source status:** The actual schematic, PCB and project files are available and editable, all with the same file name. This is NOT a claim that the PCB has passed fresh ERC/DRC, that the hardware is manufactured, or that it is electrically tested. The 3D model files referenced by the board are not yet included.
 
-## The problem
+## Download and open the editable project
 
-When building a rover, robotic arm or another electronics project, motor drivers, voltage converters, connectors and power wiring take a lot of time. Prototype wires can loosen or break; breadboards and protoboards wear out. Making a custom PCB for every robot is slow and expensive. This project moves the common electronics onto a reusable base with modular connections.
+1. Use **Code > Download ZIP** on this repository, then extract the ZIP.
+2. Install a KiCad version compatible with the PCB, which identifies itself as **KiCad 10.0**. Older versions may not be able to open it.
+3. Open **[Unuversal robotic driver final versio.kicad_pro](Unuversal%20robotic%20driver%20final%20versio.kicad_pro)** in KiCad Project Manager.
+4. Open the **schematic** and **PCB Editor** from the project. Both files use the same project base name, including the original spelling.
+5. Run **Electrical Rules Checker (ERC)** in Schematic Editor and **Design Rules Checker (DRC)** in PCB Editor before creating any manufacturing files.
 
-## What the hub is meant to do
+### Actual editable files
 
-- Connect motor driver modules, servos, sensors and expansion boards without rebuilding all control wiring.
-- Provide organized **12 V switched power**, **5 V** and **3.3 V** rails in the current R4 design.
-- Use STM32 GPIO and PWM for motion control and digital outputs.
-- Allow the same controller to be reused for different machines, from robotic arms and rovers to smart-home prototypes and test rigs.
-- Support future custom motor-driver expansion boards and more onboard functions.
-
-**Important distinction:** The original ambitious feature list (several integrated DC/BLDC/stepper drivers and 7.5-24 V input) is a *goal from early planning*. The current **R4 carrier** has two module connections and switched 12 V outputs; it does **not** implement all those motor drivers on the PCB. See [design history](docs/DESIGN_HISTORY.md).
-
-## Current R4 hardware at a glance
-
-| Item | Documented design |
+| File | What it contains |
 | --- | --- |
-| Main controller | STM32 **NUCLEO-F401RE assumed**, verify board revision |
-| Input | **Regulated 12 V DC only** |
-| Switched outputs | 2 relay-switched 12 V outputs, **10 A target each, untested** |
-| Expansion | 2 × 2x7-pin headers, 10 GPIO/PWM signals per header |
-| Signals | 20 total signal pins, up to 19 independent duty-cycle channels with timer limitations |
-| Logic | 3.3 V GPIO; not automatically 5 V tolerant |
-| Regulated rails | 5 V / 1 A shared, 3.3 V / 1 A shared |
-| PCB | 180 x 145 mm, 1.6 mm thick, 4 copper layers; 2 oz outer / 1 oz inner |
-| Indicator LEDs | 12 V, 5 V, 3.3 V, Relay 1, Relay 2 |
-| Validation | Reported ERC 0, DRC 0; **no physical testing** |
+| [Project settings](Unuversal%20robotic%20driver%20final%20versio.kicad_pro) | KiCad project and board design settings |
+| [Schematic](Unuversal%20robotic%20driver%20final%20versio.kicad_sch) | Editable circuit and embedded schematic symbol definitions |
+| [PCB](Unuversal%20robotic%20driver%20final%20versio.kicad_pcb) | Editable 180 x 145 mm board with copper tracks, parts, vias and zones |
 
-## System overview
+**Why the spelling is unusual:** The uploaded PCB's sheet references and the schematic's symbol-instance references use the name **Unuversal robotic driver final versio**. Keeping that exact base name avoids changing those internal links simply to make the title prettier.
 
-```mermaid
-flowchart TD
- A[Regulated 12 V input] --> B[Main fuse and power distribution]
- B --> C[5 V buck regulator]
- B --> D[3.3 V buck regulator]
- C --> E[STM32 NUCLEO-F401RE]
- E --> F[Module 1: 10 signals + power]
- E --> G[Module 2: 10 signals + power]
- E --> H[Relay drivers PC10 / PC11]
- B --> I[Relay 1: switched 12 V]
- B --> J[Relay 2: switched 12 V]
- H -. control .-> I
- H -. control .-> J
- C --> F
- C --> G
- D --> F
- D --> G
-```
+The uploaded .kicad_prl file was intentionally excluded: it is local editor/window state, not required for sharing a KiCad design, and is already covered by .gitignore.
 
-## What is in this repository
+## What is on the current board
 
-| Location | Contents |
+| Item | Information from the uploaded files |
 | --- | --- |
-| [`docs/`](docs/) | Goals, specifications, pin map, architecture, BOM, research method, test plan, safety, roadmap and history |
-| [`hardware/rev4/`](hardware/rev4/) | R4 schematic PDF, illustrated technical guide and notes on missing editable files |
-| [`hardware/relay-revA/`](hardware/relay-revA/) | Earlier relay prototype document, a **different** design from R4 |
-| [`hardware/legacy-kicad/`](hardware/legacy-kicad/) | **Editable legacy KiCad PCB, schematic and project**, copied from the earlier Petnica repository |
-| [`hardware/routing-history/`](hardware/routing-history/) | First routing work versus the improved R4 layout, with clear version notes |
-| [`firmware/`](firmware/) | Starting point for an STM32 relay-control example (not a finished firmware project) |
-| [`presentations/`](presentations/) | Earlier project + PLECS presentation, includes related DC-load material |
-| [`assets/`](assets/) | R4 board render, R4 signal routing diagram and earlier PCB layout illustration |
-| [`PUBLISH_TO_GITHUB.ps1`](PUBLISH_TO_GITHUB.ps1) | Windows script for uploading this folder to a new blank GitHub repo |
+| Board outline | 180 x 145 mm; declared 1.6 mm thickness |
+| Copper layers | F.Cu, In1.Cu, In2.Cu and B.Cu |
+| Footprints placed | 68 |
+| Copper segments | 293: 172 front, 66 inner-2, 55 back |
+| Vias | 25 |
+| Copper fill zones | 3 GND zones: front, inner-1 and back |
+| Named nets referenced by pads/tracks/zones | 99 |
+| Main hardware | STM32 Nucleo Morpho sockets, two 2x7 expansion headers, two relays, fuse branches, separate 5 V and 3.3 V buck-regulator stages, XT60-style connectors |
 
-## Project applications
+These counts describe saved objects in the supplied PCB, not proof that every connection is correctly routed. The image above is a **generated 2D preview of the uploaded PCB data**, not a photograph of a built board and not a KiCad DRC screenshot.
 
-A single hardware platform can be adapted to a **robotic arm**, **rover**, **tracked robot**, **motor-control experiment**, **custom sensor system** or **smart-home controller**. The exact motors and sensors depend on the fitted expansion boards and power limits.
+## Function of the hub
 
-## Development approach
+The board is a reusable base controller for robotics prototypes. It connects an STM32 Nucleo to two external modules, supplies regulated rails and switches two 12 V output branches through relays. Suitable module types could include brushed-motor, stepper, servo and sensor interfaces. The board itself does not contain all of those motor drivers.
 
-The project has included architecture planning, KiCad circuit and PCB work, STM32 pin assignment, relay/power design, and BLDC motor-control simulation in PLECS (including six-step, sinusoidal and FOC/PI concepts). Simulations are learning and design tools; they do not replace measurements on real hardware.
+The earlier R4 guide documents a **regulated 12 V input** and **10 A target per relay-switched branch**. Those are design targets, not measured or certified continuous ratings. Check relay, connector, copper, fuse, thermal and supply limits before applying load.
 
-See [Project status](docs/PROJECT_STATUS.md) and [testing plan](docs/TEST_PLAN.md).
+## Important limits and missing items
 
-## Getting started
+- **Missing 3D models:** The PCB refers to **20 distinct STEP/WRL model files** in a project-relative models folder which is not present in this repository. Some components will not appear correctly in 3D Viewer. The PCB footprints themselves are embedded and editable.
+- **Custom libraries:** Several footprints use a Carrier_Custom library identifier; the existing footprint definitions are stored in the PCB, but a separate editable custom library has not been supplied.
+- **Verification:** A newer ERC/DRC report for these exact uploaded files has not been generated here. The 19 November R4 guide reported passing checks on that earlier documented design, not verified checks for this upload.
+- **Production:** No fresh Gerber/drill pack, completed supplier BOM, assembled unit or load-test results have been supplied.
+- **Power safety:** No verified reverse-polarity protection or safe regenerative-energy handling. Do not connect large motor loads without testing.
 
-1. Read [the latest R4 hardware guide](hardware/rev4/Elektronche_Carrier_Guide.pdf) and [pin map](docs/PIN_MAP.md).
-2. Do not connect motors or apply high current until the physical power stage is assembled, checked and tested using a current-limited supply.
-3. For editable older KiCad work, open the [archived legacy KiCad files](hardware/legacy-kicad/README.md) and see [routing history](hardware/routing-history/README.md).
-4. If publishing a **new GitHub repository**, create an empty repo named `Universal-Robotics-Control-Hub` under `bodanmakerpro-max`, then use `PUBLISH_TO_GITHUB.ps1` or the Git commands in [PUBLISHING.md](PUBLISHING.md).
+## Repository guide
 
-## Note about licensing
+- [How to open and edit the source](docs/KICAD_EDITABLE_PROJECT.md)
+- [Current validation and outstanding items](docs/VALIDATION_STATUS.md)
+- [Project status](docs/PROJECT_STATUS.md)
+- [Power, wiring and hardware specs from the R4 reference](docs/HARDWARE_SPECS.md)
+- [Pin map](docs/PIN_MAP.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [BOM and parts tracker](docs/BOM.md)
+- [Test plan and safety notes](docs/TEST_PLAN.md)
+- [3D model requirements](models/README.md)
+- [Routing evolution](hardware/routing-history/README.md)
+- [Historical R4 guide and schematic PDFs](hardware/rev4/README.md)
+- [Earlier archived KiCad work](hardware/legacy-kicad/README.md)
+- [Firmware examples](firmware/README.md)
+- [Project history and future plans](docs/DESIGN_HISTORY.md)
 
-No open-source license has been selected. Until one is added, do not assume that the hardware files or written content are available for unrestricted reuse.
+The PDF guides, early design files, images and presentations are historical resources, not substitutes for the latest editable PCB.
+
+## License
+
+No open-source license has been selected. Do not assume unrestricted reuse rights.

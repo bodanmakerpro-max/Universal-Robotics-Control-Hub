@@ -1,7 +1,8 @@
-# Visual assets and routing references
+# Image assets
 
-- `carrier_r4_preview.png`: preview extracted from page 1 of the R4 guide. It is a render, **not** a photo of a fabricated board.
-- `Elektronche_Carrier_R4_Routing.png`: R4 signal routing illustration, showing one-layer header-signal routing with no signal vias. The complete R4 PCB still uses four copper layers.
-- `early_pcb_routing_reference.png`: earlier PCB layout illustration from October. It is **not confirmed to be the same as the first user-reworked R3 KiCad routing**, nor a manufacturing output.
+- **latest_PCB_routing_preview.png**: 2D image made from the currently uploaded KiCad PCB file (22 November 2026). Displays the board outline, pads, tracks and vias. NOT a KiCad DRC screenshot or a photo of a real board.
+- **carrier_r4_preview.png**: earlier board render extracted from the 19 November R4 PDF guide.
+- **Elektronche_Carrier_R4_Routing.png**: earlier R4 signal routing illustration.
+- **early_pcb_routing_reference.png**: historical earlier layout reference, not confirmed as the exact R3 source.
 
-Read the [routing design history](../hardware/routing-history/README.md) for what changed and which original editable files are still missing.
+Use the current file when showing the latest board. Refer to [routing history](../hardware/routing-history/README.md) for the difference between revisions.

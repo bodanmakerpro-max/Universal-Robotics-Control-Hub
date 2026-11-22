@@ -1,24 +1,33 @@
-# Project status (20 November 2026)
+# Project status: 22 November 2026
 
-## Completed or documented
+## Latest source available
 
-- Defined the motivation: reduce repeat wiring, loose connections, debug time and single-use PCBs.
-- Compared platform needs for brushed DC, BLDC, stepper, servo, GPIO, ADC, I2C and serial systems.
-- Moved from an early ESP32 all-in-one idea toward a modular **STM32** concept.
-- Worked on BLDC commutation/control methods in **PLECS**, including six-step, sinusoidal control, back-EMF, torque ripple, PI and FOC ideas.
-- Produced an earlier two-channel 12 V relay prototype design (Rev A, 6 November 2026).
-- Produced R4 STM32 dual-module carrier documentation, dated 19 November 2026, with a revised pin map, PCB render and schematic PDF.
-- R4 documentation reports KiCad **ERC = 0 violations** and **DRC = 0 violations, 0 unconnected, 0 mismatches**. This is a reported design-software check, not an independently repeated or electrical test.
+The repository now includes the **actual editable KiCad schematic, PCB and .kicad_pro** from the 22 November upload. All three files are in the root and use the same project base name, **Unuversal robotic driver final versio**, to match the saved internal reference names.
 
-## Not yet completed or not verified
+A [new PCB routing preview](../assets/latest_PCB_routing_preview.png) was rendered from that uploaded board. It shows saved copper routing and part positions, not a KiCad GUI screenshot or built board.
 
-- Actual assembly, power-up, thermal test and full-load verification of R4.
-- Verified motor-driver daughterboards for every planned motor type.
-- A complete tested STM32 firmware application.
-- Measured maximum continuous current, reliability or failure rate.
-- Final production-ready BOM with confirmed supplier prices and exact footprints.
-- The **editable R4 KiCad PCB, schematic and project source** are not present in the source files available for this package. The PDF schematic and guide are included; do not treat them as an editable KiCad project.
+## What the upload contains
 
-## Source separation
+- Four-layer STM32 dual-module carrier PCB, 180 x 145 mm.
+- 68 footprints, 293 copper track segments, 25 vias and three GND copper zones.
+- Two expansion headers, two relay-switched power branches, fuses and 5 V/3.3 V buck stages, as represented by saved board objects.
+- Editable schematic with embedded symbol definitions.
+- Matching KiCad project configuration.
 
-The **Rev A relay board** used G2RL relays and AO3400A MOSFET drivers. The newer **R4 carrier** documents Songle SRD-12VDC-SL-C relays and PN2222ABU transistor drivers. They are not the same PCB version. The original `Petnica-proekti-2026` KiCad source is also an older source reference, not necessarily the current R4 board.
+## Still outstanding
+
+- **No independent KiCad 10 open/ERC/DRC check of this exact revision.**
+- No confirmed verification that the PCB netlist matches the schematic without errors.
+- The local 3D-model files referenced by the PCB are missing from the repository.
+- The independent Carrier_Custom footprint library is not included.
+- No manufacturing Gerbers, drills or verified assembly BOM for this revision.
+- No fabricated, powered or load-tested board, and no demonstrated continuous relay-output load rating.
+
+## Earlier work retained as references
+
+- R4 illustrated PDF guide and schematic, dated 19 November 2026, with previously reported (not retested here) ERC/DRC checks.
+- Rev A relay-prototype PDF, separate from the latest board.
+- Older Petnica KiCad project in the legacy folder, retained strictly as an archive.
+- Early PCB illustrations and routing notes, firmware starting point and PLECS presentation.
+
+Older R4 guidance about 20 expansion signals and the one-signal-layer routing illustration should not be treated as independently verified facts about the uploaded November 22 PCB. See [source audit](VALIDATION_STATUS.md), [project editing](KICAD_EDITABLE_PROJECT.md) and [routing history](../hardware/routing-history/README.md).

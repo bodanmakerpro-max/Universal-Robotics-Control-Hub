@@ -1,32 +1,17 @@
-# Design history and changing requirements
+# Design and development history
 
-This project has changed over time. **Do not combine specs from different versions** as if they all exist on the same finished board.
+This hub began as a concept for replacing loose recurring robot wiring with a reusable central control board. The early goals included direct connections for motor drivers, sensor modules, GPIO, power delivery and future custom robot modules. Seminar work also covered BLDC control ideas and PLECS simulations.
 
-## 30-31 January 2026: all-in-one concept
+## Earlier revisions
 
-Initial discussion described an ESP32-based universal robot controller with a broad wish list:
+- An earlier Petnica KiCad source set is archived in hardware/legacy-kicad. It is **not** the latest carrier PCB.
+- The 6 November Rev A relay prototype is a separate hardware revision and remains available as a PDF.
+- The 19 November R4 technical guide and schematic PDF document the STM32 dual-module carrier with switched 12 V power and 5 V/3.3 V stages. The R4 guide reported ERC and DRC pass at the time, but that claim has not been rechecked for later uploaded files.
 
-- 7.5-24 V possible input range;
-- four stepper drivers, three BLDC drivers, three brushed DC motor drivers;
-- five servo ports, five analog inputs, five digital connections, five I2C ports and three serial links;
-- Wi-Fi, Bluetooth and possible radio expansions.
+## 22 November 2026 editable source upload
 
-A Teensy 4.1 and more capable controllers were also considered. These were **requirements and candidates**, not proven installed features. Later presentation work shifted to STM32, including an STM32G91XC candidate and smaller demonstrated channel counts.
+The user supplied a native PCB, schematic and project settings. The files were placed in the repository root under one exact basename matching the saved schematic instance references and PCB sheetfile properties: **Unuversal robotic driver final versio**. This resolves the previous missing editable board and settings problem.
 
-## September-October 2026: modular STM32 approach
+A new current routing preview was generated from the actual PCB copper/pad geometry. The source review counted 68 footprints, 293 tracks, 25 vias, three GND zones and a 180 x 145 mm outline. KiCad 10 source format is used.
 
-Work with Dusan focused on a reusable STM32 main board with **two interchangeable expansion slots** and power switching for modules. Mixed brushed DC, BLDC, stepper, servo or sensor daughterboards were discussed. PLECS was used for BLDC control simulations. The final hardware version from that seminar was reported not saved and needed redesign. Previous motor counts were scenario-dependent and should not be represented as simultaneous R4 capacity.
-
-## 6 November 2026: dual relay Rev A
-
-A two-output 12 V relay circuit was documented using **G2RL-1A-E** relays, AO3400A drive MOSFETs, flyback diodes and fuses. The document reports KiCad ERC success but no routed, built or load-tested hardware at that point. The PDF is archived under `hardware/relay-revA`.
-
-## 19 November 2026: STM32 dual-module carrier R4
-
-The most recent available design documentation uses **NUCLEO-F401RE**, two 2x7 module headers, two 12 V relay outputs, dedicated 5 V/3.3 V rails, five LEDs and a four-layer PCB. It includes detailed pin assignments and reports successful ERC/DRC, but has **not** been fabricated/tested.
-
-The R4 source documents name different relay parts (**Songle SRD-12VDC-SL-C** and PN2222ABU drivers) from the Rev A board. R4 also requires **regulated 12 V input only**, not the initial 7.5-24 V aspiration.
-
-## 20 November 2026: repository documentation
-
-The available historical presentations, rendered diagrams and PDF schematics were collected here with a status ledger and test plan. The original editable R4 KiCad files were **not available to include**. There is a link to older KiCad source held in the existing `Petnica-proekti-2026` GitHub repository.
+Still unresolved are full ERC/DRC, production outputs, 3D models, assembly and physical power testing. See [current status](PROJECT_STATUS.md) and [source audit](VALIDATION_STATUS.md).
